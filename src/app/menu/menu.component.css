@@ -1,4 +1,7 @@
+.fs-16{
+  font-size: 1.2rem;
+}
+
 a{
-    font-size: 1.5rem;
-    text-decoration: none;
+  cursor: pointer;
 }

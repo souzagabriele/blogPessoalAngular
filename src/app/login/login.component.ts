@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { UsuarioLogin } from '../model/UsuarioLogin';
+import { User } from '../model/User';
+import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  usuarioLogin: UsuarioLogin = new UsuarioLogin()
+  userLogin: UserLogin = new UserLogin()
 
   constructor(
     private auth: AuthService,
@@ -22,20 +23,26 @@ export class LoginComponent implements OnInit {
     window.scroll(0,0)
   }
 
-  login(){
-    this.auth.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin)=>{
-      this.usuarioLogin = resp
+  entrar(){
+    this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=>{
+      this.userLogin = resp
 
-      environment.token = this.usuarioLogin.token
-      environment.nome = this.usuarioLogin.nome
-      environment.foto = this.usuarioLogin.foto
-      environment.id = this.usuarioLogin.id
+      environment.token = this.userLogin.token
+      environment.nome = this.userLogin.nome
+      environment.foto = this.userLogin.foto
+      environment.id = this.userLogin.id
+
+      console.log(environment.token)
+      console.log(environment.nome)
+      console.log(environment.foto)
+      console.log(environment.id)
 
       this.router.navigate(['/inicio'])
-    }, erro=>{
-      if(erro.status == 401){
-        alert('Usuário ou senha incorretos')
+    }, erro =>{
+      if(erro.status == 500){
+        alert ('usuário ou senha estão incorretos')
       }
     })
   }
+
 }

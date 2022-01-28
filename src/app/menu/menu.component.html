@@ -1,15 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <img src="{{foto}}" alt="foto de perfil" class="img-fluid rounded-circle" width="50px">
-    <h4 class="text-white ml-3">Bem vinda, {{nome}}</h4>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span> class="navbar-toggler-icon"></span>
-    </button>
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto d-flex align-items-center">
+      <li class="nav-item active">
+        <img src="{{foto}}" alt="Foto do usuário" width="40px" height="40px" class="img-fluid rounded-circle">
+      </li>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <li class="nav-item pl-3">
+        <p class="m-0 font-weight-bold text-white fs-16">Olá, {{nome}}</p>
+      </li>
 
-        <div class="ml-auto">
-        <a (click)='sair()' class="text-white">Sair</a>
-        </div>
-    </div>
-    </nav>
+      <li class="nav-item pl-3">
+        <a href=""></a>
+        <p class="text-white fs-16 m-0">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </p>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto d-flex align-items-center">
+      <li class="nav-item pl-3">
+        <a (click)="sair()" class="m-0 font-weight-bold text-white fs-16">sair</a>
+      </li>
+      
+      <li class="nav-item pl-3">
+        <a href=""></a>
+        <p class="text-white fs-16 m-0">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </p>
+      </li>
+    </ul>
+  </div>
+</nav>

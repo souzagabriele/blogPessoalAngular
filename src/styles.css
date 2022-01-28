@@ -1,12 +1,12 @@
-html
-{
-    scroll-behavior: smooth;
+/* You can add global styles to this file, and also import other style files */
+html{
+  scroll-behavior: smooth;
 }
 
 .fs-54{
-    font-size: 50pt;
+  font-size: 54pt;
 }
 
 .fs-18{
-    font-size: 50pt;
+  font-size: 18pt;
 }
